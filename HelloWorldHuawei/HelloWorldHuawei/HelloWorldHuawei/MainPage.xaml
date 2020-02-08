@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorldHuawei.MainPage">
+    <StackLayout Margin="10,35,10,10">
+        
+        <Label Text="Notes"
+               HorizontalOptions="Center"
+               FontAttributes="Bold" />
+        <Label x:Name="RecvLabel"
+               Text="No new messages"
+               HorizontalOptions="Center"
+               HeightRequest="70" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Show message"
+                    Clicked="OnShowMsgButtonClicked" />
+            <Button Grid.Column="1"
+                    Text="Delete1"
+                    Clicked="OnDeleteButtonClicked"/>
+        </Grid>
+
+        <Editor x:Name="SendEditor"
+                Placeholder="Enter your message"
+                HeightRequest="70" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Send"
+                    Clicked="OnSendButtonClicked" />
+            <Button Grid.Column="1"
+                    Text="Delete2"
+                    Clicked="OnDeleteButtonClicked"/>
+        </Grid>
+        
+        <Label Text="Type in topic to subscribe"
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+        <Editor x:Name="TopicEditor"
+                Placeholder="Enter your topic"
+                HeightRequest="70" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Subscribe"
+                    Clicked="OnSubscribeButtonClicked" />
+            <Button Grid.Column="1"
+                    Text="Unsubscribe"
+                    Clicked="OnUnsubscribeButtonClicked"/>
+        </Grid>
+        
+        
+        <Label Text="Slider"
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+
+        <Slider x:Name="slider"
+                 Minimum="0"
+                 Maximum="100"
+                 VerticalOptions="CenterAndExpand" />
+
+        <Label Text="{Binding Source={x:Reference slider},
+                              Path=Value,
+                              StringFormat='Slider value is {0:F1}'}"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+</ContentPage>
+    <!--<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HelloWorldHuawei.MainPage">
+
+    <StackLayout>
+        --><!-- Place new controls here --><!--
+        <Label Text="Welcome to Xamarin.Forms!" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+
+</ContentPage>-->
+    

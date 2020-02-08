@@ -11,6 +11,7 @@
 *.class
 
 # Generated files
+obj/
 bin/
 gen/
 out/
@@ -75,7 +76,7 @@ fastlane/test_output
 fastlane/readme.md
 
 # Version control
-vcs.xml
+*/vcs.xml
 
 # lint
 lint/intermediates/

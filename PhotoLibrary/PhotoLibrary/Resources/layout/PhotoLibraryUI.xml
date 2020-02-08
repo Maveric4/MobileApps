@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--Book code-->
+    <!--<Button
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="@string/takePicture"
+             android:id="@+id/takePicture" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/chooseFromGallery"
+        android:id="@+id/chooseFromGallery" />
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="fitXY"
+        android:id="@+id/photoImageView" />-->
+    <Button
+            android:id="@+id/takePicture"
+            style="@style/camera_button" />
+    <Button
+        android:id="@+id/chooseFromGallery"
+        style="@style/gallery_button" />
+    <ImageView
+        android:id="@+id/photoImageView"
+        style="@style/photoImageView" />
+    <Button android:id="@+id/myButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/hello" />
+</LinearLayout>

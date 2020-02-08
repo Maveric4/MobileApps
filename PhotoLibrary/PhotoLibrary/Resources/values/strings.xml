@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PhotoLibrary</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello">Hello World, Click Me!</string>
+    <string name="chooseFromGallery">Choose from Gallery</string>
+    <string name="takePicture">Use Camera</string>
+</resources>
