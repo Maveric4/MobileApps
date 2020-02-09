@@ -20,12 +20,12 @@ namespace Notes
             {
                 // Save
                 var filename = Path.Combine(App.FolderPath, $"{Path.GetRandomFileName()}.notes.txt");
-                File.WriteAllText(filename, note.Text);
+                File.WriteAllText(filename, note.AdditionalNote);
             }
             else
             {
                 // Update
-                File.WriteAllText(note.Filename, note.Text);
+                File.WriteAllText(note.Filename, note.AdditionalNote);
             }
 
             await Navigation.PopAsync();
@@ -39,7 +39,6 @@ namespace Notes
             {
                 File.Delete(note.Filename);
             }
-
             await Navigation.PopAsync();
         }
 

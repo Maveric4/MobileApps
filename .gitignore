@@ -10,6 +10,9 @@
 # Java class files
 *.class
 
+# Visual Studio
+*/.vs/**
+
 # Generated files
 obj/
 bin/

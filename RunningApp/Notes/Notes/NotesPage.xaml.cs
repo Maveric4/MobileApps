@@ -31,7 +31,7 @@ namespace Notes
                 notes.Add(new Note
                 {
                     Filename = filename,
-                    Text = File.ReadAllText(filename),
+                    AdditionalNote = File.ReadAllText(filename),
                     Date = File.GetCreationTime(filename)
                 });
             }
@@ -57,6 +57,7 @@ namespace Notes
                     File.Delete(selectedNote.Filename);
                 }
             }
+            selectedNote = null;
             UpdateLabels();
         }
 
