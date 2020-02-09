@@ -30,16 +30,26 @@ namespace Notes
         protected override void OnStart()
         {
             // Handle when your app starts
+            //ShowMessageDialog(title: "OnStartMessage", message: "App just started");
+
         }
 
         protected override void OnSleep()
         {
             // Handle when your app sleeps
+            //ShowMessageDialog(title: "OnSleepMessage", message: "App is sleeping");
         }
 
         protected override void OnResume()
         {
             // Handle when your app resumes
+            ShowMessageDialog(title: "OnResumeMessage", message: "Witaj z powrotem", cancel:"Kontynuuj");
         }
+
+        async void ShowMessageDialog(string title, string message, string cancel="OK")
+        {
+            await Application.Current.MainPage.DisplayAlert(title, message, cancel);
+        }
+
     }
 }
