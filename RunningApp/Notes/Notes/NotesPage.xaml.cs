@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using Xamarin.Forms;
 using Notes.Models;
+using Notes.Data;
 
 namespace Notes
 {
@@ -21,24 +22,14 @@ namespace Notes
             UpdateLabels();
         }
 
-        void UpdateLabels()
+        async void UpdateLabels()
         {
-            var notes = new List<Note>();
-
-            var files = Directory.EnumerateFiles(App.FolderPath, "*.notes.txt");
-            foreach (var filename in files)
-            {
-                notes.Add(new Note
-                {
-                    Filename = filename,
-                    AdditionalNote = File.ReadAllText(filename),
-                    Date = File.GetCreationTime(filename)
-                });
-            }
-
-            listView.ItemsSource = notes
+            listView.ItemsSource = (await App.Database.GetNotesAsync())
                 .OrderByDescending(d => d.Date)
                 .ToList();
+            //listView.ItemsSource = notes
+            //    .OrderByDescending(d => d.Date)
+            //    .ToList();
         }
 
         async void OnNoteAddedClicked(object sender, EventArgs e)
@@ -48,14 +39,11 @@ namespace Notes
                 BindingContext = new Note()
             });
         }
-        void OnNoteDeleteClicked(object sender, EventArgs e)
+        async void OnNoteDeleteClicked(object sender, EventArgs e)
         {
             if (selectedNote != null)
             {
-                if (File.Exists(selectedNote.Filename))
-                {
-                    File.Delete(selectedNote.Filename);
-                }
+                await App.Database.DeleteNoteAsync(selectedNote);
             }
             selectedNote = null;
             UpdateLabels();

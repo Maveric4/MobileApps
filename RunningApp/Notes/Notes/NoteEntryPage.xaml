@@ -4,7 +4,15 @@
              x:Class="Notes.NoteEntryPage"
              Title="Log Entry">
     <StackLayout Margin="20">
-        <Editor Placeholder="Enter your note"
+        <Label FontSize = "20" Text="Training distance [km]" /> <!--TextColor="#77d065"-->
+        <Editor Placeholder="Enter training distance"
+                Text="{Binding Distance}"
+                HeightRequest="50" />
+        <Label FontSize = "20" Text="Training time [min]" />
+        <Editor Placeholder="Enter training time"
+                Text="{Binding TrainingTime}"
+                HeightRequest="50" />
+        <Editor Placeholder="Enter your additional note"
                 Text="{Binding AdditionalNote}"
                 HeightRequest="100" />
         <Grid>

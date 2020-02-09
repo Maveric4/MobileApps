@@ -9,9 +9,10 @@
         <ToolbarItem Text="-"
                      Clicked="OnNoteDeleteClicked" />
         <ToolbarItem Text="Edit"
-                     Clicked="OnNoteEditClicked" /> <!--Mozna wyszarzyc jesli nie zaznaczone-->
-        
+                     Clicked="OnNoteEditClicked" />
+        <!--Mozna wyszarzyc jesli nie zaznaczone-->
     </ContentPage.ToolbarItems>
+
     <ListView x:Name="listView"
               Margin="20"
               ItemSelected="OnListViewItemSelected">
