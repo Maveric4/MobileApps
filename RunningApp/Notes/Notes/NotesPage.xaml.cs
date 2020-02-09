@@ -29,9 +29,6 @@ namespace Notes
             listView.ItemsSource = (await App.Database.GetNotesAsync())
                 .OrderByDescending(d => d.Date)
                 .ToList();
-            //listView.ItemsSource = notes
-            //    .OrderByDescending(d => d.Date)
-            //    .ToList();
         }
 
         async void OnNoteAddedClicked(object sender, EventArgs e)

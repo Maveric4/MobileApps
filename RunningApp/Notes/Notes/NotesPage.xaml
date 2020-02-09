@@ -12,7 +12,6 @@
         <ToolbarItem Text="Edit"
                      Clicked="OnNoteEditClicked" 
                      x:Name="EditToolbarItem"/>
-        <!--Mozna wyszarzyc jesli nie zaznaczone-->
     </ContentPage.ToolbarItems>
 
     <ListView x:Name="listView"
