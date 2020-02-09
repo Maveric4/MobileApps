@@ -14,14 +14,19 @@
                      x:Name="EditToolbarItem"/>
     </ContentPage.ToolbarItems>
 
-    <ListView x:Name="listView"
+    <StackLayout>
+        <Button Text="Go to MainPage"
+                Clicked="GoToMainPage" 
+                HeightRequest="100"/>
+        <ListView x:Name="listView"
               Margin="20"
               ItemSelected="OnListViewItemSelected">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <TextCell Text="{Binding AdditionalNote}"
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding AdditionalNote}"
                           Detail="{Binding Date}" />
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

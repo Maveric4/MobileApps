@@ -69,5 +69,10 @@ namespace Notes
                 selectedNote = (Note)e.SelectedItem;
             }
         }
+
+        async void GoToMainPage(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MainPage());
+        }
     }
 }
