@@ -7,9 +7,11 @@
         <ToolbarItem Text="+"
                      Clicked="OnNoteAddedClicked" />
         <ToolbarItem Text="-"
-                     Clicked="OnNoteDeleteClicked" />
+                     Clicked="OnNoteDeleteClicked"
+                     x:Name="DeleteToolbarItem"/>
         <ToolbarItem Text="Edit"
-                     Clicked="OnNoteEditClicked" />
+                     Clicked="OnNoteEditClicked" 
+                     x:Name="EditToolbarItem"/>
         <!--Mozna wyszarzyc jesli nie zaznaczone-->
     </ContentPage.ToolbarItems>
 

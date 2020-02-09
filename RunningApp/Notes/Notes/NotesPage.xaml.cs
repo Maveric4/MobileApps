@@ -20,6 +20,8 @@ namespace Notes
         {
             base.OnAppearing();
             UpdateLabels();
+            DeleteToolbarItem.IsEnabled = false;
+            EditToolbarItem.IsEnabled = false;
         }
 
         async void UpdateLabels()
@@ -62,6 +64,9 @@ namespace Notes
 
         void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            //var editToolbarItem = this.FindByName<ToolbarItem>("Edit");
+            DeleteToolbarItem.IsEnabled = true;
+            EditToolbarItem.IsEnabled = true;
             if (e.SelectedItem != null)
             {
                 selectedNote = (Note)e.SelectedItem;
